@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+</head>
+<body>
+	<h1> js2/test3.html </h1>
+	
+	<fieldset>
+		<legend> 폼 태그 만들기 </legend>
+		<!-- 정보를 전달해서 이동할 페이지 -->
+		<!-- action="" 또는 없음 : 자기 자신의 페이지로 이동 -->
+		<form action="" name="f1" method="post" onsubmit="return fun3();"> 
+			아이디: <input type="text" name="id" value=""><br>
+			비밀번호: <input type="password" name="pw" value=""><br>
+			<!-- submit을 제어하고 싶을 때는 action 속성이 있는 form 태그에 onsubmit을 써야 함. -->
+			<input type="submit" name="submit" value="전송" > <!-- submit: onclick & submit -->
+			
+			<hr>
+			
+			<input type="button" value="속성 변경 후 전송" onclick="fun1();"> <!-- onclick -->
+			
+			<input type="button"  value="데이터 확인" onclick="fun2();">
+		</form>
+	</fieldset>
+	
+	<fieldset>
+		<legend> method </legend>
+	</fieldset>
+	
+	<script >
+
+	// JS에서 form 태그 접근 방법 
+	// ① window.document.name(폼이름)
+	// ② window.document.forms[0]
+	
+	// 속성 변경 버튼 클릭시 test2.html로 이동(submit)
+	function fun1() {
+		alert("fun1() 실행");
+		// 1. 페이지 이동 주소 변경
+		window.document.f1.action="test2.html";
+		// 2. 페이지 이동(submit)
+		window.document.f1.submit();
+	}
+	// 데이터 유효성 체크(아이디와 비밀번호가 서버에 있는 정보와 일치하는가)
+		// 1. 아이디 입력 창 접근  -> 각 태그의 name으로 접근 가능
+		alert(window.document.f1.id);
+		console.log(window.document.f1.id); // body에 있는 태그의 내용을 콘솔창에 출력
+// 		document.f1.id.value="itwill";
+		// 2. 아이디와 비밀번호 입력 확인
+		function fun2() {
+			// 1. 데이터 들고와서 변수 선언
+				var id = document.f1.id.value;
+				var pw = document.f1.pw.value;
+				console.log("ID: "+id);
+				console.log("PW: "+pw);
+				
+				
+			// 2. 데이터 확인
+			if(id =="") {
+				alert("아이디를 입력하세요1");
+				document.f1.id.focus();     // 해당 요소로 커서 이동하기 
+				return; // 펑션 fun2() 종료
+			} 
+// 			위와 같은 결과
+// 			if(id.length<=0) {
+// 				alert("아이디를 입력하세요2");
+// 			}
+			if(pw =="") {
+				alert("비밀번호를 입력하세요");
+				document.f1.pw.focus();
+				return;
+			} 
+			
+			// 3. 데이터 전송
+			document.write.submit();
+		}
+		
+		function fun3() {
+			alert("fun3()");
+			if(id =="") {
+				alert("아이디를 입력하세요1");
+				document.f1.id.focus();    
+				if(pw =="") {
+					alert("비밀번호를 입력하세요");
+					document.f1.pw.focus();
+					return false;
+				} 
+				return false; 
+			} 
+
+			
+		}
+		
+			
+	
+</script>
+	
+
+</body>
+</html>

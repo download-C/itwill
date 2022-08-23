@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+
+//document.write("<hr>");
+//document.write("<h3></h3>");
+
+
+document.write("<hr>");
+document.write("<h3>TV 객체 생성해서 사용하기</h3>");
+	
+	
+	var TV = new Object();
+	TV.size = 32;
+	TV.color = "white";
+	TV.brand = "LG";
+	TV.price = 35.5;00
+	TV.ch = "0";
+	
+	function changeCh(ch) {
+		TV.ch=ch;
+	}
+	
+	
+	document.write("TV의 크기 : "+TV.size+"inch <br>");
+	document.write("TV의 컬러 : "+TV.color+"<br>");
+	document.write("TV의 브랜드 : "+TV.brand+"<br>");
+	document.write("TV의 가격 : "+TV.price+"만원 <br>");
+	document.write("현재 채널 : "+ TV.ch+"<br>");
+	changeCh( prompt('바꿀 채널 번호를 입력하세요') );
+	document.write("바꾼 채널 : "+TV.ch+"<br>");
+
+
+document.write("<hr>");
+document.write("<h3>숫자 1개를 출력하는 기능을 가진 함수를 재귀호출 통해서 1~10까지 출력</h3>");
+	var num =0;
+	function printNum() {
+			num++;
+			document.write(num+" ");
+			
+			if(num==10) {
+				return;
+			}
+			printNum();
+	}
+	
+
+	printNum();
+
+
+document.write("<hr>");
+document.write("<h3>함수의 리턴</h3>");
+	function test() {
+		document.write("1");
+		return 3;
+		document.write("2");	
+	}
+	
+	test(); 			 //return뒤의 3은 숫자일 뿐이기 때문에 출력이 되지 않음
+	var tmp = test(); 	 // 1
+	document.write(tmp); // 13  return뒤의 3을 출력문으로 감싸줬기 때문에 출력됨
+	
+
+	document.write("<hr>");
+	document.write("<h3>함수 전달인자(매개변수) 사용하기</h3>");
+	// 서브웨이 주문하기
+	
+// 	function subway(bread, vegi, cheese, meet, sauce1, sauce2) {
+// 		var getBread;
+// 		var getVegi;
+// 		var getCheese;
+// 		var getMeet;
+// 		var getSauce1;
+// 		var getSauce2;
+// 		document.write('서브웨이 샌드위치<br>'+)
+// 	}
+	
+
+	document.write("<h4>함수를 이용해서 로그인 구현하기</h4>");
+	
+	var UserID = 'itwill';
+	var UserPW = '1234';	
+
+	
+	function login(inputID, inputPW) {
+
+		var inputID = prompt('아이디를 입력하세요');
+		if(UserID==inputID) {
+		 	
+			var inputPW = prompt('비밀번호를 입력하세요');	
+			if(UserPW==inputPW) {
+					
+				alert('로그인에 성공했습니다.');
+			}else {
+				alert('비밀번호가 잘못되었습니다');
+			}
+			
+		}else {
+			alert('아이디가 없습니다');
+		}
+	}
+	
+	login('itwill', '1234'); 
+	 
+	
+	document.write("<hr>");
+	document.write("<h3>Hello 5번 출력하는 함수 생성 및 호출</h3>");
+	
+	function hello5(){
+		for(var i=0; i<5; i++) {
+			document.write("hello<br>");
+		}
+	}
+	
+	hello5();
+
+
+	document.write("<hr>");
+	document.write('5*5 표에 1~25 순서대로 넣기')
+	var num = 1;
+	var tableTag = "<table border = 1>";
+	
+	for(var row=0; row<25; row+=5) {
+		tableTag += "<tr>";
+			for(var col=1; col<=5; col++) {
+				tableTag += "<td>";
+				tableTag += num;
+				tableTag += "</td>";
+				num++;
+			}
+		tableTag += "</tr>";
+	}
+	tableTag += "</table>";
+	document.write(tableTag);
+	document.write("<hr>");
+	
+
+// 반복문 ( for / while / do-while )
+// Q. 1~10까지의 숫자를 화면에 가로 출력.
+
+
+	for(var i=0; i<10; i++) {
+		document.write((i+1)+" ");
+	}	
+	document.write("<hr>");
+	
+// Q. 11~20	
+	for(var i=10; i<20; i++) {
+		document.write((i+1)+" ");
+	}
+	document.write("<hr>");
+// Q. 1~10중 홀수만
+
+	for(var i=1; i<=5; i++) {
+		document.write(((i*2)-1)+" ");
+	}
+	document.write("<hr>");
+	
+	for(var i=1; i<=10; i++) {
+		document.write(i+" ");
+		i++;
+	}
+	document.write("<hr>");
+	
+	for(var i=1; i<=10; i=i+2) {
+		document.write(i+" ");
+	}
+	document.write("<hr>");
+	
+	for(var i=1; i<=10; i+=2) {
+		document.write(i+" ");
+	}
+	document.write("<hr>");
+
+// Q. 10~20 중 홀수만
+	for(var i=6; i<=10; i++) {
+		document.write(((i*2)-1)+" ");
+	}
+	document.write("<hr>");
+	
+	for(var i=11; i<=20; i++) {
+		document.write(i+" ");
+		i++
+	}
+	document.write("<hr>");
+	
+	for(var i=11; i<=20; i=i+2) {
+		document.write(i+" ");
+	}
+	document.write("<hr>");
+	
+	for(var i=11; i<=20; i+=2) {
+		document.write(i+" ");
+	}
+	document.write("<hr>");
+	
+// Q. 1~10 짝수만
+	for(var i=2; i<=10; i+=2) {
+		document.write(i+" ");
+	}
+	document.write("<hr>");
+
+//Q. 11~20 짝수만
+	for(var i=12; i<=20; i+=2) {
+		document.write(i+" ");
+	}
+	document.write("<hr>");
+
+	for(var i=12; i<=20; i+=2) {
+		document.write(i+" ");
+	}
+	document.write("<hr>");
+	
+	
+	// 반복문 while
+		
+	var i =0;
+	
+	while(i<10) {
+		i++;
+		document.write(i+' ');
+	}
+		
+	document.write('<hr>')
+	
+	for(i=0; i<10; i++) {
+		document.write((i+1)+' ');
+	}
+
+	document.write('<hr>')
+	
+	var sum=0;
+	for(i=1; i<=10; i+=2) {
+		sum+=i;
+		document.write(i+' ');
+	} 
+	document.write("홀수 합: "+sum);
+	document.write(" ");
+	
+	var 	sum=0;
+	for(i=2; i<=10; i+=2) {
+		sum+=i;
+		document.write(i+' ');
+	}
+	document.write("짝수 합: "+sum)
+	
+	document.write('<hr>')
+	
+	// 2~9단 세로출력
+	var i;
+	var j;
+	for(i=2; i<10; i++) {
+		document.write(i+"단")
+		document.write('<br>');
+		for(j=2; j<10; j++) {
+			document.write( i+'X'+j +'=' +(i*j)+ '<br>')
+		}
+		document.write('<br>')
+	}
+	
+	// 구구단 가로 출력
+	var i;
+	var j;
+
+	
+	for(i=2; i<10; i++) {
+		document.write('['+i+'단]&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp');
+	}
+	
+	document.write('<hr>')
+	
+	for(j=2; j<10; j++) {
+		document.write(j+'X'+1+"="+(j*1)+' &nbsp&nbsp&nbsp&nbsp ');
+		document.write(j+'X'+2+"="+(j*2)+' &nbsp&nbsp&nbsp&nbsp ');
+		document.write(j+'X'+3+"="+(j*3)+' &nbsp&nbsp&nbsp&nbsp ');
+		document.write(j+'X'+4+"="+(j*4)+' &nbsp&nbsp&nbsp&nbsp ');
+		document.write(j+'X'+5+"="+(j*5)+' &nbsp&nbsp&nbsp&nbsp ');
+		document.write(j+'X'+6+"="+(j*6)+' &nbsp&nbsp&nbsp&nbsp ');
+		document.write(j+'X'+7+"="+(j*7)+' &nbsp&nbsp&nbsp&nbsp ');
+		document.write(j+'X'+8+"="+(j*8)+' &nbsp&nbsp&nbsp&nbsp ');
+		document.write(j+'X'+9+"="+(j*9)+' &nbsp&nbsp&nbsp&nbsp ');
+		document.write('<br>')
+	}
+	
+
+	
+
+</script>
+
+
+</script>
+</head>
+<body>
+<h1>js1/test4.html</h1>
+
+
+
+
+</body>
+</html>

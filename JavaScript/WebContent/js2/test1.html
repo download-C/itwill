@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>js2/test1.html</title>
+<script type="text/javascript">
+	// 이벤트 : 브라우저에서 발생하는 모든 상황 -> <on* = "">
+	// onclick: js 호출 가능
+	function fun() {
+		alert("실행");
+	}
+	
+	
+	function naver() {
+		open("https://www.naver.com", "", "width=800, height=600, left=500, top=250");
+	}
+	
+	function openTest1_1() {
+		open("test1-1.html", "", "width=950, height=500 top=200, left=500");
+	}
+	
+	// 페이지의 제목 속성 변수
+	window.document.title = "최다운";
+	alert(window.document.title);
+	
+	// location: 브라우저 창의 주소
+	// test1 실행시 test1-1도 실행
+	window.document.location = "test1-1.html";
+	
+	
+	
+	
+	
+</script>
+</head>
+<body>
+	<!--  버튼 클릭시 '버튼 클릭'이라는 알림창 생성 -->
+	<input type="button" value="버튼1" onclick="alert('버튼1을 클릭했습니다')">
+	<br>
+	<!-- 버튼 더블클릭 시 '더블 클릭'이라는 알림창 생성 -->
+	<input type="button" value="더블클릭하세요" ondblclick="alert('버튼을 더블클릭했습니다')">
+	<br>
+	<!-- 사진을 누르면 '사진을 누름'이라는 알림창 생성 -->
+	<input type="image" src="cat.jpeg" onclick="alert('고양이 사진을 누르다니...!')">
+	<br>
+	<!-- 마우스 오버 이벤트 발생 시 fun() -alert("실행"); 출력 -->
+	<input type="button" value="마우스를 올리세요" onmouseover="fun()">
+	<br><br><br>
+	<!-- 버튼 누르면 naver 창 열기 -->
+	<input type="button" value="Naver 연결" onclick="naver()">
+	<br><br><br>
+	<!-- 버튼 누르면 test1-1.html 열기 후 그 안에 닫기 버튼 -->
+	<input type="button" value="test1-1.html 연결" onclick="openTest1_1()">
+
+
+	
+	
+</body>
+</html> 

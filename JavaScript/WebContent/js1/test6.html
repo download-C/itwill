@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>js1/test6.html</title>
+
+<script type="text/javascript">
+	// 1. 내장 객체: 자바스크립트 엔진이 자체적으로 가지고 있는 객체
+	//	   1-1. 날짜 정보(Date Object)
+				var today = new Date();
+				document.write(today);  // 현재 네트워크 상의 시간
+				document.write("<hr>")
+				
+				var day1 = new Date(2020,1,1); // 2020-2-1로 나타남. 날짜 객체의 월 정보는 0~11까지만 있음
+				document.write(day1);
+				document.write("<hr>")
+				
+				var day2 = new Date("2020/1/1");
+				document.write(day2);
+				document.write("<hr>")
+
+				// 오늘 날짜를 '년/월/일'로 표시 
+				
+// 				var day = "";
+// 				switch(today.getDay()) {
+// 				case 0: day = '일요일'; break;
+// 				case 1: day = '월요일'; break;
+// 				case 2: day = '화요일'; break;
+// 				case 3: day = '수요일'; break;
+// 				case 4: day = '목요일'; break;
+// 				case 5: day = '금요일'; break;
+// 				case 6: day = '토요일'; break;
+// 				default:day = "요일 정보 없음";
+// 				}
+					
+// 				document.write(today.getFullYear()+'년 '+(today.getMonth()+1)+'월 '+ today.getDate()+'일 '+day); 
+					
+				function showYoil(inputday) {
+					var day = '';
+					switch(inputday) {
+					case 0: day = '일요일'; break;
+					case 1: day = '월요일'; break;
+					case 2: day = '화요일'; break;
+					case 3: day = '수요일'; break;
+					case 4: day = '목요일'; break;
+					case 5: day = '금요일'; break;
+					case 6: day = '토요일'; break;
+					default:day = '요일 정보 없음';
+					}
+					document.write(day);
+				}		
+							
+				
+				document.write("day1 요일: ");
+				showYoil(day1.getDay());
+				document.write('<hr>');
+				document.write("day2 요일: ");
+				showYoil(day2.getDay());
+				document.write('<hr>');
+				var cupDay = new Date("2002,5,31");
+				document.write('2022년 월드컵 개막식의 요일: ')+showYoil(cupDay.getDay());
+				document.write('<hr>');
+				
+				// D-day 계산기 
+				// 특정일 - 오늘날짜 => 일수 
+				var xmas = new Date("2022/12/25");
+				
+				document.write(xmas-today); // 14629850874
+				
+				document.write('<hr>');
+				
+				var result = (xmas - today)/(1000*60*60*24);
+				if (xmas-today>0) {
+					document.write('-'+Math.ceil(result)+'일');
+				} else {
+					document.write('+'+Math.ceil(result)+'일');
+				}
+				
+				
+				
+				
+				
+	//     1-2.				
+		
+	// 2. 브라우저 객체 모델(BOM: hrowwer Object Model)
+	//		=> window, screen, document, 
+	
+	// 3. 문서 객체 모델 (DOM, Document Object Model)
+	//		=> HTML 문서의 구조 <html> <head></head> <body></body> </html>
+	
+	
+	
+ 
+</script>
+</head>
+<body>
+
+</body>
+</html>

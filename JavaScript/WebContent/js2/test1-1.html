@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>js2/test1-1.html</title>
+<script type="text/javascript">
+	function changeColor(c) {
+		window.document.bgColor= c;
+	}
+</script>
+</head>
+<body>
+	<!-- 버튼을 누르면 현재 창 닫기 -->
+	<input type="button" value="현재 창 닫기" onclick="window.close()"> 
+	<!-- opener는 가장 최근에 열린 창의 부모 창(새 창 열기 기능이 있는 창) -->
+	<input type="button" value="이전 창 닫기" onclick="opener.window.close()">
+	<br><br><br>
+	<!-- 버튼을 누르면 해당 색깔로 배경색 바꾸기(bgColor) -->
+	<form method="post">
+		<input type="radio" name ="color" onclick="changeColor('orange')"> ORANGE
+		<input type="radio" name ="color" onclick="changeColor('pink')"> PINK
+		<input type="radio" name ="color" onclick="changeColor('skyblue')"> SKYBLUE
+		<input type="radio" name ="color" onclick="changeColor('gray')"> GRAY
+	</form>
+</body>
+</html>

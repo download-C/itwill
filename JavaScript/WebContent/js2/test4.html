@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function fun1() {
+		alert("fun1()");
+		//gender 라디오 버튼이 선택하면 alert 뜨기
+		var female = document.f1.gender[0].checked;
+		var male   = document.f1.gender[1].checked;
+
+		if(female==false) {
+			if(male==false) {
+			alert("성별을 선택하세요");
+			return false;
+			} else alert("남")
+		} else if(female==true) {
+			alert("여");
+		}
+
+		var hobby0 = document.f1.hobby[0].checked;
+		var hobby1 = document.f1.hobby[1].checked;
+		var hobby2 = document.f1.hobby[2].checked;
+		
+		if(hobby0==false && hobby1==false && hobby2==false) {
+			alert("취미를 선택하세요");
+			return false;
+		}
+		var classNo = document.f1.classNo.options[document.f1.classNo.selectedIndex].value
+		if(classNo=="") {
+			alert("강의실을 선택하세요.");
+			return false;
+		}
+// 		if(document.f1.classNo.options[0].selected == true) {
+// 			alert("강의실을 선택하세요.");
+// 			return false;
+// 		}
+	}
+</script>
+</head>
+<body>
+<fieldset> 	
+	<form action="" name="f1" onsubmit="fun1();">
+		아이디: <input type="text" name="id" id="id"><hr>
+		성별 :  <input type="radio" name="gender" value="여">여 
+			    <input type="radio" name="gender" value="남">남 <hr>
+		취미 :  <input type="checkbox" name="hobby" value="게임"> 게임
+		 		<input type="checkbox" name="hobby" value="영화"> 영화
+		 		<input type="checkbox" name="hobby" value="독서"> 독서 <hr>
+ 		강의장 :
+ 		<select name="classNo">
+ 			<option value="">강의실을 선택하세요</option>
+ 			<option value="1">1강의실</option>
+ 			<option value="2">2강의실</option>
+ 			<option value="3">3강의실</option>
+ 			<option value="4">4강의실</option>
+ 			<option value="5">5강의실</option>
+ 			<option value="6">6강의실</option>
+ 		</select>
+		<input type="submit" value="전송">
+	</form>
+</fieldset>
+</body>
+</html>

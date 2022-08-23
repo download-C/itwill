@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>js1.test2.html</title>
+	<script type="text/javascript">
+	
+	document.write("<h1>연산자</h1>")
+	document.write("<br>")
+		
+		document.write("<h2>1-1. 산술연산자 (+, -. *, /, %</h2>")
+		document.write("<br>")	
+		// )
+				var num1 = 200; 
+				var num2 = 100;
+				
+				document.write(num1+"+"+num2+"="+(num1+num2));
+				document.write("<br>");
+				document.write(num1+"-"+num2+"="+(num1-num2));
+				document.write("<br>");
+				document.write(num1+"*"+num2+"="+(num1*num2));
+				document.write("<br>");
+				document.write(num1+"/"+num2+"="+(num1/num2));
+				document.write("<br>");
+				document.write(num1+"%"+num2+"="+(num1%num2));
+				document.write("<br>");
+				document.write("<hr>");
+		
+		
+		// 1-2. 활용하기
+		
+			// Q1.
+				document.write("<h3>Q1 : 과일 25개를 상자에 포장해야 한다.</h3>"); 
+				document.write("<br>");
+				document.write("&nbsp&nbsp&nbsp 상자는 한 번에 5개씩 포장 가능. 필요한 상자의 개수는?");
+				document.write("<br>");
+				var fruit = 25;
+				document.write("A : 과일 개수 "+fruit+"개");
+				document.write("<br>");
+				var box = document.write("&nbsp&nbsp&nbsp 필요한 상자 개수: "+fruit/5+"개");
+				document.write("<br>");
+				document.write("<hr>");
+		
+			// Q2.
+				var n1 = 849;
+				document.write("<h3>Q2: 모든 세 자리 수를 입력받아서 n1 -> ???? -> 800</h3>");
+				document.write("<br>");
+				document.write("방법 1. 나머지 연산자 활용하기");
+				document.write("<br>");
+				document.write("연산 : "+n1+" - (n1 % 100) = "+(n1 - (n1 % 100)) );
+				document.write("<br>");
+				document.write("<br>");
+				document.write("방법 2. 버림 태그(Math.floor) 활용하기");
+				document.write("<br>");
+				document.write("연산 : Math.floor("+n1+"/100) *100 = " + Math.floor(n1/100) * 100);
+				document.write("<br>");
+				document.write("<hr>");
+				
+			// Q3.	
+				var n2 = 953;
+				document.write("<h3> Q3: +"+n2+"+ -> ???? -> 951 </h3>");
+				document.write("<br>");
+				document.write("방법 1. 나머지 연산자 활용하기");
+				document.write("<br>");
+				document.write("연산 : "+n2+"- ( +"+n2+"+%10 ) +1 = "+( n2-(n2%10)));
+				document.write("<br>");
+				document.write("<br>");
+				document.write("방법 2. 버림 태그(Math.floor) 활용하기");
+				document.write("<br>");
+				document.write("연산 : Math.floor("+n2+"/10) *10 +1 = " + Math.floor(n2/10) * 10 +1);
+				document.write("<br>");
+				document.write("<hr>");
+			
+		// 2-1. 대입연산자 (A = B) 연산 진행방향이 오른쪽에서 왼쪽
+		
+		// 2-2. 복합대입연산자 (+=, -=, *=, /=, %=)
+		/* 	- A += B   →   A = A + B
+			- A -= B   →   A = A - B
+			- A *= B   →   A = A * B
+			- A /= B   →   A = A / B
+			- A %= B   →   A = A % B */
+			
+			
+			document.write("<h4>자바 스크립트로 표 만들기1</h4>")
+			document.write("<table border = '1'>");
+			document.write("<tr>");
+			document.write("<td>1</td>");
+			document.write("<td>2</td>");
+			document.write("<td>3</td>");
+			document.write("</tr>");
+			document.write("<tr>");
+			document.write("<td>4</td>");
+			document.write("<td>5</td>");
+			document.write("<td>6</td>");
+			document.write("</tr>");
+			document.write("</table>");				
+			document.write("<br>");
+			document.write("<br>");
+			
+			document.write("<h4>자바 스크립트로 표 만들기2</h4>")
+			document.write("복합대입연산자(+=)와 tableTag 이용하기");
+			document.write("<br>");
+			
+			var n1 = 1, n2 = 2, n3 = 3, n4 = 4, n5 = 5, n6 = 6;
+			var tableTag = "";
+			document.write("<br>");
+			
+			tableTag += "<table border = '1'>"
+			tableTag += "<tr>";
+			tableTag += "<td>";
+			tableTag += n1;
+			tableTag += "</td>";
+			tableTag += "<td>";
+			tableTag += n2;
+			tableTag += "</td>";
+			tableTag += "<td>";
+			tableTag += n3;
+			tableTag += "</td>";	
+			tableTag += "</tr>";
+			tableTag += "<tr>";
+			tableTag += "<td>";
+			tableTag += n4;
+			tableTag += "</td>";
+			tableTag += "<td>";
+			tableTag += n5; 
+			tableTag += "</td>";
+			tableTag += "<td>";
+			tableTag += n6;
+			tableTag += "</td>";	
+			tableTag += "</tr>";
+			tableTag += "</table>";
+			document.write(tableTag);
+			document.write("<hr>");
+			
+		// 
+		document.write("<h2>3. 증감 연산자 (++A, A++, --A, A--)</h2>")
+		document.write("<br>")
+		
+			var a = 100;
+			document.write(++a);
+			document.write("<br>")
+			document.write(a++);
+			document.write("<br>")
+			document.write(a);
+			document.write("<br>")
+			document.write("<hr>")
+		
+		
+		document.write("<h2> 4. 비교연산자(==, !=, >, <, >=, <=, ===, !==) </h2>") // -> 결과는 항상 boolean으로 표현
+		document.write("<br>")
+	
+			var num1 = 100;
+			var num2 = 100;
+			document.write("var num1 = 100; var num2 = 200;")
+			document.write("<br>")
+			document.write("num1 ==num2 : " + num1==num2);    // -> true  JS에서 ==는 데이터값만 비교
+			document.write("<br>");
+			document.write("num1 === num2 : " + num1==num2);  // -> false JS에서 ===는 데이터값과 데이터 타입 모두 비교
+			document.write("<br>");
+			document.write("<hr>");
+		
+		document.write("<h2>6. 삼항연산자</h2>")
+		document.write("<br>")
+		// 
+			var a = 200;
+			var b = 300;
+			document.write("var a = "+a+", var b = "+b);
+			document.write("<br>");
+			document.write( a>b ? (a+"가 "+b+"보다 더 크다"):(b+"가 "+a+"보다 더 크다") );
+			document.write("<br>");
+			document.write("<br>");
+			
+			var a = -100;
+			document.write("var a = "+a);
+			document.write("<br>");
+			document.write( a>0 ? (a+"는 양수다") : (a+"는 음수다") );
+			document.write("<br>");
+			document.write("<br>");
+			
+			//양수, 음수, 0 판단
+				var a = 0;
+				document.write("var a = "+a);
+				document.write("<br>");
+				document.write( a>0 ? "양수":(a<0 ? "음수":"0") );
+				document.write("<br>");
+				document.write("<hr>");
+			
+			// Q 바나나 37개 , 바나나 박스 크기(5개), 필요한 박스 수
+				var banana = 37;
+				var count = 5;
+				var rest = banana%count;
+				var box =( Math.floor(banana/count) + ( (rest>0) ? 1:0 ) );
+				document.write("바나나가 "+banana+"개일 때 바나나 5개가 들어가는 박스는 "+box+"개가 필요하다.");
+			
+			
+	</script>
+</head>
+<body>
+		<hr>
+		<hr>
+		<hr>
+
+<h1>2022.06.15(수) js1.test2.html</h1>
+
+	<h3>자바 스크립트로 표 만들기3</h3>
+	
+	<table border = '1'>
+		<tr>
+			<td>1</td>
+			<td>2</td>
+			<td>3</td>
+		</tr>
+		<tr>
+			<td>4</td>
+			<td>5</td>
+			<td>6</td>
+		</tr>
+	</table>				
+
+
+</body>
+</html>

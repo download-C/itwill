@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<script type="text/javascript">
+		// 한 줄짜리 주석 ctrl+shift+c
+		
+		/*   여러 줄 주석   */
+		/*   ctrl+shift+/   */
+		
+	 /* document.write("안녕하세요1<br>");  //ctrl+alt+↓ :아래로 코드 복사
+		document.write("안녕하세요2<br>");*/  //코드 드래그 후 alt+↓ 또는 ↑ : 코드 이동  
+		document.write("안녕하세요3<br>");	//document(웹페이지)에 "문구"를 write(출력) 
+	 /* document.write("안녕하세요4<br>");  //오류가 날 경우 그 전 코드는 실행되고 오류난 곳 아래부터 실행 안 됨
+		document.write("안녕하세요5<br>");  */ //여러 줄을 주석하면 테스트할 때 힘들기 때문에 한 줄 주석을 넣고 필요한 거만 풀어 씀
+		
+		
+//		+ 연산자 / 연결자
+// 			1. 연산자 +
+				document.write("100+200");
+				document.write("<br>");
+// 			2. 연결자 +
+				document.write("100"+"200");
+				document.write("<br>");
+// 				ex) 100+200=300
+					document.write("100"+"+"+"200"+"="+(100+200));
+					document.write("<br>");
+					
+					console.log("콘솔창 로그 출력");
+					
+ 		//	변수(Variables): 데이터 값을 저장하는 공간(메모리)
+ 		//		-> 한 번에 하나만 저장 가능
+ 		
+ 		// 변수 사용 : 변수 선언 -> 변수 초기화 -> 변수 사용(재사용)
+ 		
+ 		// 데이터 타입: 문자형(String), 숫자형(Number), 논리형(Boolean), Null
+		
+ 		// (java) int number = 100 -> (js) 무조건무조건 var 변수명 = 100;
+ 		// 변수명에는 한글X 무조건무조건 영어, 숫자, 특수문자(_, $)의 조합
+ 		// var를 안 써도 실행은 되지만 가독성을 위해서 항상 붙이는 습관 필요
+ 		
+ 		// 1. 숫자형(Number)
+ 			var number = 100; 
+ 			//  var 숫자 = 100;
+ 			var a = 100;
+ 			var box = 5; //box가 의미하는 내용이 애매함.
+ 			var sizeOfBox =  5; // 변수명이 여러 단어의 조합일 때는 카멜 표기법 사용.
+ 			
+ 		// 2. 문자형(String)
+ 			var myName1 = "최다운";
+ 			var myName2 = '최다운';
+ 			document.write(myName1); 
+ 			document.write("<br>");  
+ 			document.write(myName2); 
+ 			document.write("<br>");
+ 			document.write("a   b"); // 띄어쓰기는 몇 번을 넣어도 한 칸만 출력
+ 			document.write("<br>");  			
+ 			document.write("a &nbsp&nbsp&nbsp&nbsp b");  //띄어쓰기를 한 칸 이상 할 때는 &nbsp를 원하는 개수만큼 사용
+ 														 //가능하면 변수 이름과 데이터타입을 맞추는 게 좋음	
+ 		
+ 			var tagValue = "<h2> 자바스크립트 @@@ </h>";
+ 			document.write(tagValue);  //문자형 데이터에 태그를 넣어도 html로 바로 출력 가능
+ 			
+ 			"100" // 문자 100
+ 			100 // 숫자 100
+ 			"100"+100 //문자+숫자이기 때문에 +가 연결자로 사용되어 100100으로 출력
+ 			Number("100")+100 // Number라는 객체를 이용해 그 안의 문자형 숫자를 숫자로 인식
+ 			
+ 		// 3. 논리형(Boolean) : 비교연산자를 통해 결과값을 T/F로 
+ 			
+ 			
+
+		
+	</script>
+</head>
+<body>
+	<h1>WebContent/js1/test1.html</h1>
+	
+	
+	
+	
+
+	 
+
+</body>
+</html>
